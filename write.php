@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 
           <article>
-            <form action="process.php" method="post">
+            <form action="write_process.php" method="post">
               <div class="form-group">
                 <label for="form-title">Title</label>
                 <input type="text" class="form-control" name="title" id="form-title" placeholder="Fill in title here.">

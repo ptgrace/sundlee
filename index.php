@@ -12,5 +12,23 @@
           }
           ?>
           </article>
+          <hr/>
+          <div id="control">
+            <div class="btn-group" role="group" aria-label="...">
+              <input type="button" value="white" onclick="document.getElementById('target').className='white'" class="btn btn-default  btn-lg"/>
+              <input type="button" value="black" onclick="document.getElementById('target').className='black'" class="btn btn-default btn-lg"/>
+            </div>
+            <a href="http://localhost/write.php" class="btn btn-success btn-lg">write</a>
+            <?php
+            if(empty($_GET['id']) === false ) {
+              echo '<a href="http://localhost/update.php?id='.$_GET['id'].'" class="btn btn-success btn-lg">update</a>'."\n";
+              echo '<a href="http://localhost/delete_process.php?id='.$_GET['id'].'" class="btn btn-success btn-lg">delete</a>'."\n";
+              
+            }
+            ?>
+          </div>
+        </div>
+    </div>
+  </div>
 
 <?php include("footer.php"); ?>
