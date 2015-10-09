@@ -31,9 +31,14 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
           <ol class="nav nav-pills nav-stacked">
           <?php
           while ($row = mysqli_fetch_assoc($result)) {
-            echo '<li><a href="/index.php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</a></li>'."\n";
+            echo '<li><a href="/list.php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</a></li>'."\n";
           }
           ?>
           </ ol>
         </nav>
         <div class="col-md-9">
+
+          <div id="profile">
+          <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>
+          <b id="logout"><a href="logout.php">Log Out</a></b>
+          </div>

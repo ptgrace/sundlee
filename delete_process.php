@@ -6,5 +6,5 @@ $conn = db_init($config["host"], $config["duser"], $config["dpw"], $config["dnam
 $sql = "DELETE FROM topic WHERE id='".$_GET['id']."'";
 //echo $sql;
 $result = mysqli_query($conn, $sql);
-header('Location: http://localhost/');
+header('Location: http://localhost/list.php');
 ?>

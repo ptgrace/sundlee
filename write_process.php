@@ -30,5 +30,5 @@ $sql = "INSERT INTO topic (title,description,author,created) VALUES('".$title."'
 $result = mysqli_query($conn, $sql);
 
 /* Redirect to index.php after inserting new topic */
-header('Location: http://localhost/index.php');
+header('Location: http://localhost/list.php');
 ?>

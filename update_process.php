@@ -31,6 +31,6 @@ echo $sql;
 $result = mysqli_query($conn, $sql);
 
 /* Redirect to index.php after inserting new topic */
-$url = "Location: http://localhost/index.php?id=".$_POST['id'];
+$url = "Location: http://localhost/list.php?id=".$_POST['id'];
 header($url);
 ?>
