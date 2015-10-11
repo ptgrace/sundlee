@@ -8,12 +8,12 @@ $conn = db_init($config["host"], $config["duser"], $config["dpw"], $config["dnam
 $title = mysqli_real_escape_string($conn, $_POST['title']);
 $author = mysqli_real_escape_string($conn, $_POST['author']);
 $description = mysqli_real_escape_string($conn, $_POST['description']);
- 
+
 $sql = "SELECT * FROM user WHERE name='".$author."'";
 $result  = mysqli_query($conn, $sql);
 
 /* if there is not the author inputed in user table */
-if ($result->num_rows == 0) { 
+if ($result->num_rows == 0) {
 	/* add new author to user table */
   $sql = "INSERT INTO user (name, password) VALUES('".$author."', '123456')";
   mysqli_query($conn, $sql);

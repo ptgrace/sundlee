@@ -43,3 +43,41 @@ INSERT INTO `user` VALUES ('3', 'k8805', '333333');
 INSERT INTO `user` VALUES ('4', 'sorialgi', '444444');
 INSERT INTO `user` VALUES ('5', 'lily', '555555');
 INSERT INTO `user` VALUES ('6', 'happydeveloper', '666666');
+
+
+-- ----------------------------
+-- Table structure for `comment`
+-- ----------------------------
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `topic` int(11) NOT NULL,
+  `author` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+ 
+-- ----------------------------
+-- Records of comment
+-- ----------------------------
+INSERT INTO `comment` VALUES ('1', '1', '1', '2015-03-31 12:14:00', 'TEST COMMENT1111');
+INSERT INTO `comment` VALUES ('2', '1', '8', '2015-10-10 14:54:20', 'TEST COMMENT2222');
+INSERT INTO `comment` VALUES ('3', '1', '8', '2015-10-10 14:54:20', 'TEST COMMENT3333');
+INSERT INTO `comment` VALUES ('4', '2', '8', '2015-10-08 18:54:20', 'TEST COMMENT3333');
+
+
+ALTER TABLE comment ADD comment varchar(500) NOT NULL;
+UPDATE comment SET `comment`='TEST COMMENT1111' WHERE id=1;
+UPDATE comment SET `comment`='TEST COMMENT2222' WHERE id=2;
+
+
+
+
+SELECT comment.id,name,comment FROM comment LEFT JOIN user ON comment.author = user.id WHERE comment.topic=".$_GET['id']
+SELECT comment.id,name,comment FROM topic LEFT JOIN user ON comment.author = user.id WHERE comment.topic=1
+
+
+
+
+
+
